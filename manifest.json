@@ -1,0 +1,26 @@
+{
+	"name":"YT TimeCtrl",
+	"version":"1.0",
+	"manifest_version":3,
+	"description":"YT TimeCtrl is a powerful browser extension designed to give you full control over YouTube video playback. With YT TimeCtrl, you can easily set custom start and end times for any video, allowing you to skip intros, cut out unwanted sections, or loop specific parts of a video for repeated viewing. Perfect for those who want a seamless and personalized YouTube experience, YT TimeCtrl puts you in charge of exactly what you want to watch.",
+	"author":"drissraiss@yahoo.com",
+	"icons":{
+		"16": "./icon.png",
+    	"32": "./icon.png",
+    	"48": "./icon.png",
+    	"128": "./icon.png"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action":{
+		"default_title":"Clicke Me",
+		"default_popup":"popup/popup.html"
+	},
+	"content_scripts": [
+   		{
+     		"matches": ["*://www.youtube.com/watch*"],
+     		"js": ["content_scripts/content.js"]
+   		}
+ 	]
+}
